@@ -2,7 +2,7 @@ import requests
 from bs4 import BeautifulSoup
 
 
-URL = 'https://www.worldometers.info/coronavirus/'
+URL = 'http://books.toscrape.com/catalogue/page-3.html'
 response = requests.get(URL)
 
 web_site_data = BeautifulSoup(response.content, 'html.parser')
@@ -17,9 +17,10 @@ web_site_data = BeautifulSoup(response.content, 'html.parser')
 #     print()
 #endregion
 
-data = web_site_data.find_all('div', id="maincounter-wrap")
+data = web_site_data.find_all('article', _class="product_pod")
+print(data)
 
 # print(data[0])
-title = data[2].find('h1').get_text()
-cases = data[2].find('span').get_text()
-print(title, cases)
+#title = data[0].find('h3').get_text()
+#cases = data[2].find('span').get_text()
+#print(title)
