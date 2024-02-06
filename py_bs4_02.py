@@ -3,8 +3,9 @@ from bs4 import BeautifulSoup
 
 
 URL = 'http://books.toscrape.com/catalogue/page-3.html'
-response = requests.get(URL)
 
+
+response = requests.get(URL)
 web_site_data = BeautifulSoup(response.content, 'html.parser')
 
 #region
