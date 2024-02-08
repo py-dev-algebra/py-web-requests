@@ -18,7 +18,7 @@ web_site_data = BeautifulSoup(response.content, 'html.parser')
 #     print()
 #endregion
 
-data = web_site_data.find_all('article', _class="product_pod")
+data = web_site_data.find_all('article', class_="product_pod")
 print(data)
 
 # print(data[0])
